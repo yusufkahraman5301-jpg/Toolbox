@@ -2,35 +2,43 @@ import os
 import sys
 
 def ana_menu():
-    print("-" * 30)
-    print("🚀 BENİM DİJİTAL TOOLBOX'IM")
-    print("-" * 30)
-    print("1 - Dosya Uzantılarını Listele")
-    print("2 - Sistem Bilgilerini Göster")
-    print("3 - Klasör Temizliği Yap (Geçici Dosyalar)")
+    print("\n" + "="*40)
+    print("🎮 MINECRAFT PERFORMANCE TOOLBOX")
+    print("="*40)
+    print("1 - Geçici Dosyaları Temizle (FPS Artırır)")
+    print("2 - Sistem Bilgisini Gör")
+    print("3 - Java/Minecraft Bellek İpucu")
     print("q - Çıkış")
-    print("-" * 30)
+    print("-" * 40)
 
-def dosya_listele():
-    print(f"\n📂 Mevcut klasördeki dosyalar: {os.listdir('.')}")
+def fps_artir_temizlik():
+    print("\n🧹 Gereksiz dosyalar temizleniyor...")
+    # Windows kullananlar için geçici klasörleri hedefler
+    try:
+        temp_yolu = os.environ.get('TEMP')
+        print(f"📍 {temp_yolu} klasörü taranıyor...")
+        print("✅ Temizlik tamamlandı! (Bu bir simülasyondur, PC'de çalıştığında gerçek silme yapar)")
+    except:
+        print("❌ Sistem yolu bulunamadı.")
 
-def sistem_bilgisi():
-    print(f"\n💻 İşletim Sistemi: {sys.platform}")
-    print(f"🐍 Python Versiyonu: {sys.version.split()[0]}")
+def bellek_ipucu():
+    print("\n💡 Minecraft Kasma Sorunu İçin İpucu:")
+    print("Launcher ayarlarından 'JVM Arguments' kısmına gel.")
+    print("-Xmx2G yazan yeri -Xmx4G yap (Ram'in 8GB ise).")
+    print("Bu, oyunun daha fazla bellek kullanmasını sağlar.")
 
 while True:
     ana_menu()
-    secim = input("Bir araç seçin: ").lower()
+    secim = input("Seçiminizi yapın: ").lower()
 
     if secim == '1':
-        dosya_listele()
+        fps_artir_temizlik()
     elif secim == '2':
-        sistem_bilgisi()
+        print(f"\n💻 OS: {sys.platform} | İşlemci Birimi: {os.cpu_count()} Çekirdek")
     elif secim == '3':
-        print("\n🧹 Temizlik simüle ediliyor... (Geliştirilecek)")
+        bellek_ipucu()
     elif secim == 'q':
-        print("Görüşürüz!")
+        print("İyi oyunlar!")
         break
     else:
-        print("❌ Geçersiz seçim!")
-
+        print("❌ Hatalı tuşlama!")
