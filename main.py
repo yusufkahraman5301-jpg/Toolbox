@@ -1,26 +1,17 @@
 from kivy.app import App
 from kivy.uix.label import Label
-from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 
-class TroyZxApp(App):
+class TroyZx(App):
     def build(self):
-        # Arka planı siyah yapalım
+        # Arka plan simsiyah, asalet olsun
         Window.clearcolor = (0, 0, 0, 1)
-        
-        layout = FloatLayout()
-        
-        # Ekranın tam ortasına TroyZx yazısı
-        label = Label(
+        return Label(
             text='TroyZx',
-            font_size='80sp',
+            font_size='100sp',
             bold=True,
-            color=(1, 0, 0, 1), # Kırmızı renk (havalı dursun)
-            pos_hint={'center_x': 0.5, 'center_y': 0.5}
+            color=(1, 1, 1, 1) # Beyaz yazı
         )
-        
-        layout.add_widget(label)
-        return layout
 
 if __name__ == '__main__':
-    TroyZxApp().run()
+    TroyZx().run()
