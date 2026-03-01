@@ -1,11 +1,11 @@
-name: APK Build
-on: [push]
+name: APK_Uretici
+on: [push] 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build with Buildozer
+      - name: Build_APK
         uses: ArtemSerebrennkov/buildozer-action@v1
         with:
-          save_bundle: true
+          buildozer_version: master
